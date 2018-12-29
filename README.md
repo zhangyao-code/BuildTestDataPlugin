@@ -10,3 +10,6 @@
 ## 2. 安装插件
 
     app/console plugin:register BuildTestData
+
+## 3. 安装插件
+    app/console corporate-training:build-user num(你需要创建多少个500)
