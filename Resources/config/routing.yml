@@ -1,0 +1,3 @@
+build_test_data_homepage:
+    path:     /
+    defaults: { _controller: BuildTestDataPlugin:Default:index }

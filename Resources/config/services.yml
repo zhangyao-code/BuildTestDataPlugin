@@ -1,0 +1,4 @@
+services:
+#    build_test_data.example:
+#        class: BuildTestDataPlugin\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
