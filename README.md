@@ -12,4 +12,4 @@
     app/console plugin:register BuildTestData
 
 ## 3. 创建用户
-    app/console corporate-training:build-user num(你需要创建多少个500)
+    app/console corporate-training:build-user num(你需要创建多少个100条)
