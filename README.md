@@ -13,4 +13,4 @@
 
 ## 3. 创建用户
     app/console corporate-training:build-user num(你需要创建多少个100条)
-    php /var/www/edusoho/plugins/BuildTestDataPlugin/Command/CTClearPlugin.php  -f Survey,QA 处理导数据库有插件依赖无法执行app/console问题
+    php plugins/BuildTestDataPlugin/Command/CTClearPlugin.php  -f Survey,QA 处理导数据库有插件依赖无法执行app/console问题
