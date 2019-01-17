@@ -11,7 +11,7 @@
 
     app/console plugin:register BuildTestData
 
-## 3. 创建用户
+## 3. 创建数据
     app/console corporate-training:build-user num(你需要创建多少个100条)
     php plugins/BuildTestDataPlugin/Command/CTClearPlugin.php  -f Survey,QA 处理导数据库有插件依赖无法执行app/console问题
     app/console corporate-training:build-courseSet courseSetId课程Id num个数
