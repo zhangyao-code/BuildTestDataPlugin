@@ -33,16 +33,13 @@ class CTBuildCourseCommand extends BaseCommand
         $parameters['number'] = $input->getArgument('number');
         $courseSet = $this->getCourseSetService()->getCourseSet($parameters['courseSetId']);
         if (empty($courseSet)) {
-           throw new NotFoundException("{$parameters['courseSetId']} 对应课程不存在");
-           exit;
+            throw new NotFoundException("{$parameters['courseSetId']} 对应课程不存在");
+            exit;
         }
 
-        for ($n = 0; $n<$parameters['number']; $n++){
+        for ($n = 0; $n<$parameters['number']; $n++) {
             $this->cloneCourseSet($courseSet);
-
         }
-
-
     }
 
     /**
@@ -99,9 +96,7 @@ class CTBuildCourseCommand extends BaseCommand
 
     public function cloneCourseSet($courseSet)
     {
-
         for ($i = 0; $i < 10; $i++) {
-
             try {
                 $this->beginTransaction();
 
@@ -118,8 +113,5 @@ class CTBuildCourseCommand extends BaseCommand
                 throw $e;
             }
         }
-
     }
-
-
 }
