@@ -30,13 +30,13 @@ class CTBuildUserCommand extends BaseCommand
 
         $parameters['orgCode'] = $input->getArgument('orgCode');
         $org = $this->getOrgService()->getOrgByOrgCode($parameters['orgCode']);
-        if (empty($org)&&!empty($parameters['orgCode'])) {
+        if (empty($org)&&empty($parameters['orgCode'])) {
             throw new NotFoundException("{$parameters['orgCode']} 对应org不存在");
             exit;
         }
 
         $org['orgCode'] = empty($parameters['orgCode'])?'1.':$parameters['orgCode'];
-        $org['orgCode'] = empty($parameters['orgCode'])?'1':$org['id'];
+        $org['id'] = empty($parameters['orgCode'])?'1':$org['id'];
 
         $parameters['postCode'] = $input->getArgument('postCode');
         $post = $this->getPostService()->getPostByCode($parameters['postCode']);
