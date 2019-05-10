@@ -3,10 +3,7 @@
 namespace BuildTestDataPlugin\Command;
 
 use AppBundle\Command\BaseCommand;
-use Biz\Org\Service\OrgService;
-use Biz\System\Service\SettingService;
 use Codeages\Biz\Framework\Service\Exception\NotFoundException;
-use CorporateTrainingBundle\Biz\Post\Service\PostService;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -16,7 +13,7 @@ class CTBuildUserCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('corporate-training:build-user')
+            ->setName('build-data:build-user')
             ->addArgument('number', InputArgument::REQUIRED, '个数')
             ->addArgument('orgCode', InputArgument::OPTIONAL, '组织机构orgCode，例：1.')
             ->addArgument('postCode', InputArgument::OPTIONAL, '岗位code')
