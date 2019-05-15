@@ -15,5 +15,4 @@ class BuildTestDataPlugin extends PluginBase
     {
         return array('DataTag', 'StatusTemplate', 'DataDict', 'NotificationTemplate');
     }
-
 }

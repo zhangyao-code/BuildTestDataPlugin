@@ -26,20 +26,31 @@ class CTBuildCourseCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->biz = $this->getBiz();
-
-        $parameters = array();
-        $parameters['courseSetId'] = $input->getArgument('courseSetId');
-        $parameters['number'] = $input->getArgument('number');
-        $courseSet = $this->getCourseSetService()->getCourseSet($parameters['courseSetId']);
-        if (empty($courseSet)) {
-            throw new NotFoundException("{$parameters['courseSetId']} 对应课程不存在");
-            exit;
+        system("cd /var/www/custom-caitong");
+        system("git add .");
+        exec('git status', $logs, $status);
+        foreach ($logs as $key => $log) {
+            if (strpos($log, '.php')!== false) {
+                $src = strpos($log, 'src/');
+                $php = strpos($log, '.php');
+                var_dump(substr($log, $src, $php));
+                system("php-cs-fixer fix ".substr($log, $src, $php));
+            }
         }
-
-        for ($n = 0; $n<$parameters['number']; $n++) {
-            $this->cloneCourseSet($courseSet);
-        }
+//        $this->biz = $this->getBiz();
+//
+//        $parameters = array();
+//        $parameters['courseSetId'] = $input->getArgument('courseSetId');
+//        $parameters['number'] = $input->getArgument('number');
+//        $courseSet = $this->getCourseSetService()->getCourseSet($parameters['courseSetId']);
+//        if (empty($courseSet)) {
+//            throw new NotFoundException("{$parameters['courseSetId']} 对应课程不存在");
+//            exit;
+//        }
+//
+//        for ($n = 0; $n<$parameters['number']; $n++) {
+//            $this->cloneCourseSet($courseSet);
+//        }
     }
 
     /**
