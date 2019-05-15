@@ -30,13 +30,14 @@ class CTBuildPhpCsFixerCommand extends BaseCommand
 
         foreach ($logs as $key => $log) {
             if (strpos($log, '.php')!== false && strpos($log, 'deleted:') == false) {
-                $src = strpos($log, ':');
-                $php = strpos($log, '.php');
-
                 if (!empty($plugin)&&!empty($logs[0])) {
+                    $src = strpos($log, ':');
+                    $php = strpos($log, '.php');
                     var_dump(trim(substr($log, $src+1, $php)));
                     system("php-cs-fixer fix ".$filePaths[0].'/plugins/'.$plugin.'/'.trim(substr($log, $src+1, $php)));
                 } else {
+                    $src = strpos($log, 'src/');
+                    $php = strpos($log, '.php');
                     var_dump(substr($log, $src, $php));
                     system("php-cs-fixer fix ".substr($log, $src, $php));
                 }
