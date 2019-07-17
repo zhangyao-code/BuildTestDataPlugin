@@ -105,7 +105,8 @@ class CTBuildCourseCommand extends BaseCommand
                 }
                 $newCourse['title'] = '新建课程'.time();
                 $this->biz['course_set_courses_copy']->copy($courseSet, array('params' => $newCourse));
-                var_dump('复制课程-'.$newCourse['title']);
+                $courseSets = $this->getCourseSetDao()->search(array(),array('createdTime'=>'DESC'),0,1,array('id','title'));
+                var_dump('复制课程-'.$courseSets[0]['title'].'id--'.$courseSets[0]['id']);
                 $this->commit();
             } catch (\Exception $e) {
                 $this->rollback();
