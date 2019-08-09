@@ -12,7 +12,7 @@ class CTBuildPhpCsFixerCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('build-data:php-cs-fixer')
+            ->setName('CT:fix')
             ->addArgument('plugin', InputArgument::OPTIONAL, '插件名称如ExamPlugin')
             ->setDescription('批量格式化git status 修改文件,主要是目标路径在src下的.php文件,插件带上插件名称如ExamPlugin');
     }

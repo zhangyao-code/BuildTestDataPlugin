@@ -18,7 +18,7 @@ class CTBuildCourseCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('build-data:build-courseSet')
+            ->setName('CT:build-courseSet')
             ->addArgument('courseSetId', InputArgument::REQUIRED, 'courseSetId')
             ->addArgument('number', InputArgument::REQUIRED, '个数')
             ->setDescription('批量复制课程,传递参数是多少个10条,');

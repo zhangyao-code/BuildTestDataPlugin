@@ -13,7 +13,7 @@ class CTBuildUserCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('build-data:build-user')
+            ->setName('CT:build-user')
             ->addArgument('number', InputArgument::REQUIRED, '个数')
             ->addArgument('orgCode', InputArgument::OPTIONAL, '组织机构orgCode，例：1.')
             ->addArgument('postCode', InputArgument::OPTIONAL, '岗位code')

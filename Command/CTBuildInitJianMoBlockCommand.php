@@ -17,7 +17,7 @@ class CTBuildInitJianMoBlockCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('build-data:initJianMoBlock')
+            ->setName('CT:init-JianMo-Block')
             ->setDescription('初始化jianmo编辑区');
     }
 
